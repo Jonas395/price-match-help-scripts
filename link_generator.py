@@ -12,7 +12,7 @@ for sheet_name, df in all_sheets.items():
     for x, y in zip(column1, column2):
         link_list.append(f'URL HERE {x} {y}')
 
-    output_path = f'output/{sheet_name}_links.txt'
+    output_path = f'output/links/{sheet_name}_links.txt'
     with open(output_path, 'w') as outfile:
         outfile.write('\n'.join(str(i) for i in link_list))
 
