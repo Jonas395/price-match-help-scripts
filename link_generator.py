@@ -8,14 +8,12 @@ output_folder = 'output/links'
 os.makedirs(output_folder, exist_ok=True)
 
 for sheet_name, df in all_sheets.items():
-    # Build URL domain using first column (row-wise)
     url_domain = ""
     column0 = df.iloc[:, 0]
     for x in column0:
         if pd.notna(x):
             x = str(x).strip()
             if x:
-                print(f'Adding {x}')
                 url_domain = f'{url_domain}{x}'
 
     print(f'Base URL template: {url_domain}')
